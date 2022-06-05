@@ -5,22 +5,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- displays site properly based on user's device -->
-
+  <meta name="author" content="Celson Fernando Rodrigues de Araujo">
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
 	<title>Frontend Mentor | QR code component</title>
 
 	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 	<style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
 		:root {
-			--bg-primary: rgb(178, 201, 219);
-			--font-primary: 'Arial', sans-serif;
-
+			--white: hsl(0, 0%, 100%);
+      --light-gray: hsl(212, 45%, 89%);
+      --grayish-blue: hsl(220, 15%, 55%);
+      --dark-blue: hsl(218, 44%, 22%);
+			--font-primary: 'Outfit', sans-serif;
 		}
 
-		.font-arial{
-			font-family: var(--font-primary);
-		}
+
 
 		* {
 			margin: 0;
@@ -28,12 +30,51 @@
 			box-sizing: border-box;
 		}
 
+		 /* BODY AND TEXT FORMATS  */
 		body {
-			background-color: var(--bg-primary);
-			font-family: var(--font-arial);
+			background-color: var(--light-gray);
+			font-family: var(--font-primary);
 		}
 
-		.vh-100 {
+		.bg-white {
+			background-color: #FFF;
+		}
+
+		.font-color-secondary {
+			color:var(--grayish-blue);
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.text-bold {
+			color:#000;
+			font-weight: 700;
+		}
+
+		.text-regular {
+			color:var(--grayish-blue);
+			font-weight: 400;
+		}
+
+
+		.text-justify {
+			text-align: justify;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+
+
+    /*END BODY AND TEXT FORMATS  */
+
+
+    /* Spacing and sizes */
+
+    .vh-100 {
 			height: 100vh;
 		}
 
@@ -41,28 +82,73 @@
 			width: 100%;
 		}
 
-		.py-2{
+		.p-1 {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			padding-bottom: 0.5rem;
+			padding-top: 0.5rem;
+		}
+
+		.pb-1{
+			padding-bottom: 0.5rem;
+		}
+
+		.pt-1{
+			padding-top: 0.5rem;
+		}
+
+		.pl-1{
+			padding-left: 0.5rem;
+		}
+
+		.pr-1 {
+			padding-right: 0.5rem;
+		}
+
+		.pl-2{
+			padding-left: 1rem;
+		}
+
+		.pr-2 {
+			padding-left: 1rem;
+		}
+
+		.pt-2{
+			padding-top: 1rem;
+		}
+
+		.pb-2{
+			padding-bottom: 1rem;
+		}
+
+		.py-2 {
 			padding-top: 1rem;
 			padding-bottom: 1rem;
 		}
 
-    .text-center {
-			text-align: center;
+		.pb-3{
+			padding-bottom: 1.5rem;
 		}
 
-    .radius-25{
+		.radius-25 {
 			border-radius: 0.25rem;
 		}
 
-		.attribution {
-			font-size: 11px;
-			text-align: center;
+		.radius-50 {
+			border-radius: 0.50rem;
 		}
 
-		.attribution a {
-			color: hsl(228, 45%, 44%);
+		.radius-80 {
+			border-radius: 0.80rem;
 		}
 
+		/*END Spacing and sizes */
+
+
+
+		.d-flex {
+			display: flex;
+		}
 
 		.flex-column {
 			flex-direction: column;
@@ -72,29 +158,35 @@
 			align-items: center;
 		}
 
-
-		.d-flex {
-			display: flex;
-		}
-
 		.justify-content-center {
 			justify-content: center;
 		}
 
+
+
 		.card {
-			min-width: 5rem;
-			width: 15rem;
-			border-radius: 0.4rem;
-			box-shadow: 1px 1px 10px #6c6c6c
+			width: 13.5rem;
+			box-shadow: 1px 1px 10px var(--grayish-blue);
 		}
 
 		.img-responsive {
 			width: 100%;
-			max-width: 200px;
+			max-width: 12.5rem;
 		}
 
-		.bg-primary {
-			background-color: #dedede;
+		.title-card {
+      font-size: 0.9rem;
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-left:1.2rem ;
+			padding-right:1.2rem ;
+		}
+
+		.msg {
+			font-size: 0.615rem;
+			text-align-last: center;
+			padding-left: 1.4rem;
+      padding-right: 1.4rem;
 		}
 
 	</style>
@@ -103,20 +195,15 @@
 <body>
 
 	<div class="vh-100 d-flex flex-column aling-center justify-content-center">
-		<div class="card bg-primary">
-			<div class="d-flex justify-content-center py-2">
-        <img class="img-responsive radius-25" src="/images/image-qr-code.png" alt="QR CODE">
+		<div class="card d-flex flex-column bg-white radius-80">
+			<div class="d-flex justify-content-center pt-1 pb-2 ">
+				<img class="img-responsive radius-50" src="/images/image-qr-code.png" alt="QR CODE">
 			</div>
-			<div>
+			<div class="text-bold d-flex text-center p-1 title-card">
 				Improve your front-end skills by building projects
 			</div>
-			<div>
+			<div class="text-center text-regular msg  font-color-secondary pt-1 pb-3">
 				Scan the QR code to visit Frontend Mentor and take your coding skills to the next level
-			</div>
-
-			<div class="attribution">
-				Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-				Coded by <a href="#">Your Name Here</a>.
 			</div>
 		</div>
 	</div>
